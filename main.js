@@ -80,20 +80,41 @@ const students = [
 const createStudentComponent = (name, subject, info) => {
   return `
       <div class="student">
-          <h1 class="xx-large>${name}</h1>
+          <h1 class="xx-large">${name}</h1>
           <section class="bordered dashed section--padded">${subject}</section>
           <aside class="pushRight">${info}</aside>
       </div>
   `;
 };
 
+const studentComponent = document.querySelector("#container");
+const passFail = document.querySelector(".xx-large");
 
-for (const student of students) {
-  let studentComponent = "";
-  if (student.score >= 60) {
-      studentComponent = add class passing to h1
+// for (const student of students) {
+//     let studentComponent = '';
+//     if (student.score >= 60) {
+//         studentComponent.innerHTML += createStudentComponent(
+//             student.score
+//         );
+//         // passFail.classList.add("passing");
+//     } else {
+//         // passFail.classList.add("failing");
+//     }
+// }
 
-    } else {
-      studentComponent = add class failing to h1
-  }
-}
+
+
+// const createFamilyComponent = (name) => {
+//     return `
+//       <h3>${name}</h3>
+//     `;
+// };
+
+// const familyContainer = document.querySelector("#family");
+
+students.forEach(function(fam) {
+    studentComponent.innerHTML += createStudentComponent(
+        fam.name
+    );
+});
+  
