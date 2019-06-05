@@ -87,34 +87,21 @@ const createStudentComponent = (name, subject, info) => {
   `;
 };
 
-const studentComponent = document.querySelector("#container");
-const passFail = document.querySelector(".xx-large");
 
-// for (const student of students) {
-//     let studentComponent = '';
-//     if (student.score >= 60) {
-//         studentComponent.innerHTML += createStudentComponent(
-//             student.score
-//         );
-//         // passFail.classList.add("passing");
-//     } else {
-//         // passFail.classList.add("failing");
-//     }
-// }
+for (const student of students) {
+    
+    let studentComponent = document.querySelector("#container");
 
-
-
-// const createFamilyComponent = (name) => {
-//     return `
-//       <h3>${name}</h3>
-//     `;
-// };
-
-// const familyContainer = document.querySelector("#family");
-
-students.forEach(function(fam) {
     studentComponent.innerHTML += createStudentComponent(
-        fam.name
+        student.name
     );
-});
-  
+
+    
+    let passFail = document.querySelector(".xx-large");
+
+    if (student.score >= 60) {
+        passFail.classList.add("passing");
+    } else {
+        passFail.classList.add("failing");
+    }
+}
